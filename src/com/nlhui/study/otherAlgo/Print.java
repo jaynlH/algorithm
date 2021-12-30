@@ -1,4 +1,4 @@
-package com.nlhui.study;
+package com.nlhui.study.otherAlgo;
 
 public class Print {
     public static void print(int num){
