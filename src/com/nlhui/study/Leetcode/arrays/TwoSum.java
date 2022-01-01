@@ -2,6 +2,11 @@ package com.nlhui.study.Leetcode.arrays;
 
 import java.util.HashMap;
 
+/**
+ * 两数之和
+ * leetcode第1题
+ * https://leetcode-cn.com/problems/two-sum/
+ */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         //创建哈希表，第一个为数，第二个为数所对应的下标
