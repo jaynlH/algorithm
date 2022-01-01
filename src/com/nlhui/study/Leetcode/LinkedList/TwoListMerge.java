@@ -13,7 +13,7 @@ public class TwoListMerge {
             return list1==null ? list2 : list1;
         }
         //判断两个链表头结点的值，决定哪个做整体的头节点
-       ListNode head= list1.value>= list2.value ? list1 : list2;
+       ListNode head= list1.value>= list2.value ? list2 : list1;
         //做头节点的那个链表  第一个节点就是头节点的下一个节点
        ListNode cur1=head.next;
        //没做头节点的那个链表 他的第一个节点就是头节点
@@ -34,7 +34,7 @@ public class TwoListMerge {
        }
        pre.next= cur1==null ? cur2 : cur1;
 
-       return pre;
+       return head;
     }
 
 

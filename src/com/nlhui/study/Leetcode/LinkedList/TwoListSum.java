@@ -4,8 +4,7 @@ import java.util.List;
 
 /**
  * 两个链表中的数相加
- * 剑指offer|| 25
- * https://leetcode-cn.com/problems/lMSNwu/
+ * https://leetcode-cn.com/problems/sum-lists-lcci/
  */
 public class TwoListSum {
     //先求链表长度
@@ -39,28 +38,33 @@ public class TwoListSum {
         ListNode last = curL;
         //表示进位
         int carry=0;
-
+        //一定要有
+        int num=0;
 
         //情况一，长短链表都不为空 curS不为空，则curL一定不为空
         while (curS!=null){
-            carry= (curL.value+curS.value+carry)%10;
-            curL.value= (curL.value+curS.value+carry)/10;
+            //不能直接carry= （curL.value+curS.value+carry）/10;
+            //            curL.value=(curL.value+curS.value+carry)%10;
+            num=curL.value+curS.value+carry;
+            carry= num/10;
+            curL.value= (num)%10;
             last=curL;
             curS=curS.next;
             curL=curL.next;
         }
         //能到此循环，说明短链表中已经没有数了
         while (curL!=null){
-            curL.value=(curL.value+carry)/10;
-            carry= (curL.value+carry)%10;
+            num=curL.value+carry;
+            curL.value=num%10;
+            carry= num/10;
             last=curL;
             curL=curL.next;
 
         }
         //第三种情况。长链表和短链表中都没数了，只剩进位，将进位创建一个节点
-        while (carry!=0){
+        if (carry!=0){
             //让长节点的最后一个节点指向这个进位
-            last.next=new ListNode(carry);
+            last.next=new ListNode(1);
         }
         return l;
     }

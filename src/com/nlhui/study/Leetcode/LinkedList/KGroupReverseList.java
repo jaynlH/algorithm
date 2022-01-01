@@ -15,7 +15,7 @@ class ListNode{
         this.value=value;
 
     }
-public static class KGroupReverseList {
+public static  class KGroupReverseList {
         //主逻辑
         public ListNode reverseKGroup(ListNode head, int k) {
             //先用一个节点记录最初的头节点
@@ -26,11 +26,12 @@ public static class KGroupReverseList {
             if (end==null){
                 return head;
             }
-            //反转   也说明第一组凑齐了
-            reverseGroup(head,end);
             //反转后的头节点为原来的end节点
             //此操作也确定了全局的head节点
             head=end;
+            //反转   也说明第一组凑齐了
+            reverseGroup(start,end);
+
             //上一次反转后的最后一个节点 ，在第一次中也就是start 最初的头节点
             ListNode lastEnd=start;
             //若最后一个节点的下一个节点为空，说明没有下一组了
@@ -46,6 +47,7 @@ public static class KGroupReverseList {
                 reverseGroup(start,end);
                 //让上一组的最后一个节点指向当前组的第一个
                 lastEnd.next=end;
+                //新的lastEnd
                 lastEnd=start;
 
 
@@ -68,6 +70,7 @@ public static class KGroupReverseList {
                 ListNode pre=null;
                 ListNode cur=start;
                 ListNode next=null;
+                //注意边界问题，是到end截止，不是到null
                 while (cur!=end){
                     next=cur.next;
                     cur.next=pre;
