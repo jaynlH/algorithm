@@ -12,7 +12,8 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-
+//合并k个升序链表
+//https://leetcode-cn.com/problems/merge-k-sorted-lists/
 
 public class MergeKSortList {
     public static class valCompare implements Comparator<ListNode>{
