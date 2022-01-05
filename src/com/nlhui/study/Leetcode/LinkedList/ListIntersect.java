@@ -16,6 +16,7 @@ public class ListIntersect {
         while (Pa!=Pb){
             //只要走相同路程。最后一定会相遇
             //A节点走完，则指向HeadB
+            //尤其需要注意指向 headA或headB ,,而不是Pa或者Pb
             Pa= Pa==null? headB : Pa.next;
             Pb= Pb==null? headA : Pb.next;
         }
