@@ -117,21 +117,21 @@ public class BitCalculate {
             if (divisor==negNum(1)){
                 return Integer.MAX_VALUE;
             }else {
-            /**
-             * 先让被除数最小值+1 除以除数
-             * 再让除数乘以余数  ， 再算出 除数与余数乘积 与 被除数的差
-             * 再用他们的差 除以 除数  作为补偿
-             * 最后 将原来的余数 加上 补偿的余数
-             * 问题就解决了
-             * （a+1）/b =c
-             * a-(b*c)=d
-             * d/b=e
-             * res=c+e
-             */
-            int c= div(add(dividend,1),divisor);
-            int d= minus(dividend,multi(divisor,c));
-            int e=div(d,divisor);
-            return  add(c,e);}
+                /**
+                 * 先让被除数最小值+1 除以除数
+                 * 再让除数乘以余数  ， 再算出 除数与余数乘积 与 被除数的差
+                 * 再用他们的差 除以 除数  作为补偿
+                 * 最后 将原来的余数 加上 补偿的余数
+                 * 问题就解决了
+                 * （a+1）/b =c
+                 * a-(b*c)=d
+                 * d/b=e
+                 * res=c+e
+                 */
+                int c= div(add(dividend,1),divisor);
+                int d= minus(dividend,multi(divisor,c));
+                int e=div(d,divisor);
+                return  add(c,e);}
         }else {
             return div(dividend,divisor);
         }
