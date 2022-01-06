@@ -1,5 +1,10 @@
 package com.nlhui.study.Leetcode.Tree.BinaryTree;
 
+/**
+ * 对称二叉树
+ * leetcode https://leetcode-cn.com/problems/symmetric-tree/
+ */
+
 public class SymmetricTree {
     public static class TreeNode {
         int val;
