@@ -43,7 +43,7 @@ public class IntroduceTreeFromPreAndIn {
         }
         //find-L2 是   从第一个到find之前是几个数  例如  0 1 2 3  假设3是find 则0~3 一共3个数
         //此处是L1+1
-        head.left=f(pre,L1+1,L1+(find-L2),in,0,find-1);
+        head.left=f(pre,L1+1,L1+(find-L2),in,L2,find-1);
         //L1+(find-L2)+1 是上次最后一个数的下一个数   因为是先序，所以从这个开始就是右边的树
         head.right=f(pre,L1+(find-L2)+1,R1,in,find+1,R2);
         return head;
@@ -84,7 +84,7 @@ public class IntroduceTreeFromPreAndIn {
 //        }
         //find-L2 是   从第一个到find之前是几个数  例如  0 1 2 3  假设3是find 则0~3 一共3个数
         //此处是L1+1
-        head.left=g(pre,L1+1,L1+(find-L2),in,0,find-1,valueIndexMap);
+        head.left=g(pre,L1+1,L1+(find-L2),in,L2,find-1,valueIndexMap);
         //L1+(find-L2)+1 是上次最后一个数的下一个数   因为是先序，所以从这个开始就是右边的树
         head.right=g(pre,L1+(find-L2)+1,R1,in,find+1,R2,valueIndexMap);
         return head;
