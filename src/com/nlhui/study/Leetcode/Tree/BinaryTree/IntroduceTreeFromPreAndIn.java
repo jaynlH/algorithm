@@ -29,7 +29,7 @@ public class IntroduceTreeFromPreAndIn {
        return f(preorder,0,preorder.length-1,inorder,0,inorder.length-1);
     }
     public static TreeNode f(int[] pre , int L1,int R1, int[] in,int L2,int R2){
-         //有可能左树为空或右数为空
+         //有可能左树为空或右树为空
         if (L1>R1){
             return null;
         }
