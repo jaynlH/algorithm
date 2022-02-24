@@ -117,7 +117,7 @@ public class MergeSort {
             help[i++]=arr[p2++];
         }
         for (int j = 0; j <help.length ; j++) {
-            arr[j]=help[j];
+            arr[L+j]=help[j];
         }
 
     }
