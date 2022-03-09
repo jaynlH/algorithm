@@ -1,5 +1,7 @@
 package com.nlhui.study.sort;
 
+import java.util.Arrays;
+
 /**
  * 插入排序：
  * 从第二个数开始依次与前面进行比较
@@ -23,11 +25,10 @@ public class InsertSort {
             int firstIndex=i;
             //进行一个while循环，循环条件是下标不能为负数并且当前数小于前一个数，有一个不满足则终止
             //若进入循环，交换之后，需要对下标-1，进行该数与另一个数的比较
-            while (firstIndex>=0&&arr[firstIndex]<arr[firstIndex-1]){
+            while (firstIndex>0&&arr[firstIndex]<arr[firstIndex-1]){
                 swap(arr,firstIndex,firstIndex-1);
                 firstIndex--;
             }
-
         }
     }
     //=========方法二
@@ -62,11 +63,57 @@ public class InsertSort {
         System.out.println();
     }
 
+
+    /**
+     * 对数器！！！！！！！！！！！！！
+     * 可当测试工具，测试用例 online judge
+     * @param args
+     */
     public static void main(String[] args) {
-        int[] arr=new int[]{1,4,6,2,4,5,1,6,3,7};
-        printArr(arr);
-        insertSort1(arr);
-        insertSort2(arr);
-        printArr(arr);
+        int testTime=1000;
+        int maxArraySize=100;
+        //想生成-100~100之间的数组就使maxValue=100,-20~20，就使maxValue=20;
+        int maxValue=100;
+        boolean succeed=true;
+        for (int i = 0; i <testTime ; i++) {
+            int[] arr1=generateRandomArray(maxArraySize,maxValue);
+            int[] arr2=copyArray(arr1);
+            insertSort1(arr1);
+            MergeSort.mergeSort2(arr2);
+            //BubbleSort.bubbleSort(arr2);
+            if (!Arrays.equals(arr1,arr2)){
+                   succeed=false;
+                   break;
+            }
+        }
+        System.out.println(succeed ? "ok,you're right!": "something wrong!" );
     }
+    public static int[] generateRandomArray(int maxArraySize,int maxValue){
+        //Math.random()*N 是 随机[0,N),不包含N
+        //要使能取到N，就 Math.random()*(N+1) 转换成int 类型，范围就成了 [0,N]
+        int[] arr= new int[(int)(Math.random()*(maxArraySize+1))];
+        for (int i=0;i<arr.length;i++){
+            //为了不止可以取到正值，使用两个随机数相减，结果可能为正值，可能为0，可能为负数
+            arr[i]=(int) (Math.random()*(maxValue+1))-(int) (Math.random()*(maxValue+1));
+        }
+        return  arr;
+    }
+    public static int[] copyArray(int[] arr){
+        int[] copy = new int[arr.length];
+        for (int i=0;i<arr.length;i++){
+            copy[i]=arr[i];
+        }
+        return copy;
+    }
+
+//    public static boolean isEqual(int[] arr1,int[] arr2){
+//        boolean is=true;
+//        for (int i = 0; i < arr1.length ; i++) {
+//            if (arr1[i]!=arr2[i]){
+//                is=false;
+//                break;
+//            }
+//        }
+//        return  is;
+//    }
 }

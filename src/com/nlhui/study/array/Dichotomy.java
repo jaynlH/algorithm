@@ -28,7 +28,7 @@ public class Dichotomy {
         return false;
     }
     //数组有序，找出大于等于num的最左边的索引
-    public static int LestestAndNoLessNumIndex(int[] arr,int num){
+    public static int LeftestAndNoLessNumIndex(int[] arr,int num){
         if (arr==null||arr.length==0){
             return -1;
         }
@@ -79,7 +79,7 @@ public class Dichotomy {
         }
         System.out.println();
         System.out.println(find(arr, 5));
-        System.out.println(LestestAndNoLessNumIndex(arr, 6));
+        System.out.println(LeftestAndNoLessNumIndex(arr, 6));
         System.out.println(RightestAndNoBiggerNumIndex(arr, 5));
 
     }
