@@ -168,7 +168,6 @@ public class MergeSort {
         if(arr==null||arr.length<2){
             return;
         }
-<<<<<<< HEAD
         int step=1;
         int N=arr.length;
         while(step<N){
@@ -199,25 +198,6 @@ public class MergeSort {
             }else{
                 step*=2;
             }
-=======
-        int[] help = new int[R-L+1];
-        int p1=L;
-        int p2=M+1;
-        int i=0;
-        while (p1<=M&&p2<=R){
-            help[i++]= arr[p1]<=arr[p2]? arr[p1++]:arr[p2++];
-        }
-        //则p2已经越界
-        while (p1<=M){
-            help[i++]=arr[p1++];
-        }
-        while (p2<=R){
-            help[i++]=arr[p2++];
-        }
-        for (int j = 0; j <help.length ; j++) {
-            arr[L+j]=help[j];
-        }
->>>>>>> 05231f500caf655d7e4368cf68a4745be9e68c7a
 
         }
     }
