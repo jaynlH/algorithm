@@ -79,7 +79,7 @@ public class InsertSort {
             int[] arr1=generateRandomArray(maxArraySize,maxValue);
             int[] arr2=copyArray(arr1);
             insertSort1(arr1);
-            MergeSort.mergeSort2(arr2);
+            RandomQuickSort.quickSort1(arr2);
             //BubbleSort.bubbleSort(arr2);
             if (!Arrays.equals(arr1,arr2)){
                    succeed=false;
