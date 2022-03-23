@@ -2,11 +2,14 @@ package com.nlhui.study.array;
 
 import com.nlhui.study.sort.InsertSort;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * 二分查找
  *
  */
-public class Dichotomy {
+public class  Dichotomy  {
     public static boolean find(int[] arr,int num){
         //两个条件的意义是不同的，必须都写上
         if (arr==null||arr.length==0){
@@ -72,6 +75,7 @@ public class Dichotomy {
 
 
     public static void main(String[] args) {
+
         int[] arr=new int[]{4,2,6,8,3,6,7,9,2,1,1};
         InsertSort.insertSort2(arr);
         for (int i : arr) {
